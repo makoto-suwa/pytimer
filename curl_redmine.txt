@@ -1,0 +1,10 @@
+    print("Write down ticket number below...
+    input_num = raw_input('#')
+    print ('')
+    print("Write down comment below...")
+    input_word = raw_input('')
+    print ('')
+    print("Which type of act did you? 9:xxx, 10:yyy, 11:zzz")
+    input_act_type = raw_input(':')
+    print ('')
+    print ("curl -vX POST --insecure -H 'Content-Type: application/xml' -H 'X-Redmine-API-Key: YOUR_API_KEY' https://HOSTNAME/time_entries.xml --data '<?xml version=\"1.0\" encoding=\"UTF-8\"?><time_entry><issue_id>") + input_num + ("</issue_id><activity_id>") + input_act_type + ("</activity_id> <spent_on>{0:%Y-%m-%d}</spent_on><hours>0.33</hours><comments>".format(now)) + input_word + ("</comments></time_entry>'")
